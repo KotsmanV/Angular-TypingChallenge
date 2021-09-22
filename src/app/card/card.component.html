@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="columns is-centered">
+        <div class="box column is-one-third" style="background-color:gainsboro;">
+            <h1 class="title has-text-centered">Typing Challenge</h1>
+            <p class="has-text-centered">
+                <span 
+                *ngFor="let letter of sentence.split(''); let i = index;" 
+                [style]='setColorByInput(i)'
+                >{{letter}}</span>
+            </p>
+            
+            <div class="field">
+                <input class="input" (input)="onInput($event)" />
+            </div>
+            
+            <div style="background-color: green;" class="box has-text-centered"  *ngIf="showSuccess()">
+                <h1 class="title" style=" color: white;">Success!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
